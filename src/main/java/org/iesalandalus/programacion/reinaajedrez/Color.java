@@ -9,7 +9,7 @@ public enum Color {
 	}
 	
 	@Override
-	public String toString( ) {
+	public String toString() {
 		return String.format(cadenaAMostrar);
 	}
 	
