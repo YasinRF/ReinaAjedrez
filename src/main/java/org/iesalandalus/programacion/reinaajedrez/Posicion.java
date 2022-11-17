@@ -19,7 +19,7 @@ public class Posicion {
 	public int getFila() {
 		return fila;
 	}
-
+	
 	public void setFila(int fila) {
 		this.fila = fila;
 	}
