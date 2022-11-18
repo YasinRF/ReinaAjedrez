@@ -8,26 +8,38 @@ public class Posicion {
 	private char columna;
 	
 	public Posicion(int fila, char columna) {
+		
+		if (fila<1 || fila>8) {
+			 throw new IllegalArgumentException("ERROR: Fila no válida.");
+		}
 		setFila(fila);
+		
+		if (columna<'a' || columna>'h') {
+			 throw new IllegalArgumentException("ERROR: Columna no válida.");	
+		}
 		setColumna(columna);
 	}
 	
 	public Posicion(Posicion posicion) {
 		if (posicion==null) {
-			throw new NullPointerException("la posicion no puede ser nula");
+			throw new NullPointerException("ERROR: No es posible copiar una posición nula.");
 		}
+		
+		this.fila=posicion.getFila();
+		this.columna=posicion.getColumna();
+		
 	}
 	private void setFila(int fila) {
 		
 		if (fila<1 || fila>8) {
-			 throw new NullPointerException("La fila no puede ser menos de 1 y mas de 8");
+			 throw new NullPointerException("ERROR: Fila no válida.");
 		}
 		this.fila = fila;
 	}
 	
 	private void setColumna(char columna) {
 		if (columna<'a' || columna>'h') {
-			 throw new NullPointerException("La fila tiene que estar entre a y h ambos incluidos");	
+			 throw new NullPointerException("ERROR: Columna no válida.");	
 		}
 		this.columna = columna;
 	}
