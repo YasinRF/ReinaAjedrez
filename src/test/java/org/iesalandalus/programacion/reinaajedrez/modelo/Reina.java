@@ -29,6 +29,18 @@ public class Reina {
 		posicion= new Posicion(1, 'd');
 	}
 	
+	public Reina(Color color) {
+		if(color==null) {
+			throw new NullPointerException("Error color");
+		}
+		if (color==color.BLANCO) {
+			posicion= new Posicion(1, 'd');
+		}
+		else if(color==color.NEGRO) {
+			posicion= new Posicion(8, 'd');
+		}
+	}
+	
 	
 	
 	
